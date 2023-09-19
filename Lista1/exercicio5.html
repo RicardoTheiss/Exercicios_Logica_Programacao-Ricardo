@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNumero">Numero</label> <br> 
+        <input type="number" id="idNumero" name="nmNumero">
+    </div>
+    <div>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </div>
+    <div>
+        <output id="idOut1"></output>
+    </div>
+    <div>
+        <output id="idOut2"></output>
+    </div>
+
+    <script>
+
+        function calcular() {
+            let numero = Number(document.getElementById("idNumero").value)
+
+            let antecessor = --numero
+            //let sucessor = antecessor + 2
+            let sucessor = ++numero
+
+            document.getElementById("idOut1").innerText = "O antecessor de "+ numero +" é " + antecessor
+            document.getElementById("idOut2").innerText = "O sucessor de "+ numero +" é " + sucessor
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem_Vindo</title>
+
+    
+</head>
+<body>
+
+    <div>
+        <label for="idNome">Nome</label>
+        <input type="text" id="idNome" placeholder="Digite seu nome"></input>
+    </div>
+
+    <div>
+        <input type="button" value="Pegar Nome" onclick="pegarNome()">
+    </div>
+
+    <div>
+        <label for="idSaida">Saida</label>   
+        <input type="text" id="idSaida">
+    </div>
+
+    <script>
+        var nome
+
+        function pegarNome(){
+            nome = document.getElementById("idNome").value
+            document.getElementById("idSaida").value = "Olá, " + nome + ", prazer em te conhecer!"
+        }
+
+    </script>
+
+
+</body>
+</html>

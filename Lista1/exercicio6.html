@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNum">Digite um número</label>
+        <input type="number" id="idNum">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+   
+    <div>
+        <output id="idDobro"></output>
+    </div>
+
+    <div>
+        <output id="idTerco"></output>
+    </div>
+
+   
+
+    <script>
+        
+
+        function enter() {
+
+            let num = Number(document.getElementById("idNum").value)
+            let dobro = num * 2
+            let terco = num / 3
+            
+           dobro = document.getElementById("idDobro").value = "O dobro do número é: " + dobro
+           terco = document.getElementById("idTerco").value = "O terço do número é: " + terco
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

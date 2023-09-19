@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="idDist">Digite a distância em metros: </label>
+        <input type="number" id="idDist">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <div>
+        <output id="idKm"></output>
+    </div>
+
+    <div>
+        <output id="idHm"></output>
+    </div>
+
+    <div>
+        <output id="idDam"></output>
+    </div>
+
+    <div>
+        <output id="idDm"></output>
+    </div>
+
+    <div>
+        <output id="idCm"></output>
+    </div>
+
+    <div>
+        <output id="idMm"></output>
+    </div>
+
+
+    <script>
+
+        function enter() {
+            let num = Number(document.getElementById("idDist").value) 
+            let km = num / 1000
+            let hm = num / 100
+            let dam = num / 10
+            let dm = num * 10
+            let cm = num * 100
+            let mm = num * 1000
+
+            document.getElementById("idSaida").value = "A distância de" + num + "m corresponde a: "
+            document.getElementById("idKm").value = km + "km"
+            document.getElementById("idHm").value = hm + "hm"
+            document.getElementById("idDam").value = dam + "dam"
+            document.getElementById("idDm").value = dm + "dm"
+            document.getElementById("idCm").value = cm + "cm"
+            document.getElementById("idMm").value = mm + "mm"
+            
+        }
+    </script>
+</body>
+</html>

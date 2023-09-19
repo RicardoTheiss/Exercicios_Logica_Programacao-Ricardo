@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idDin">Digite a quantidade de dinheiro para ser convertida</label>
+        <input type="number" id="idDin">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idDolar"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+
+            let din = Number(document.getElementById("idDin").value) 
+            let dolar = din / 3.45
+
+            document.getElementById("idDolar").value = "Com R$:" + din + " você pode comprar US$:" + dolar
+            
+        }
+    </script>
+</body>
+</html>

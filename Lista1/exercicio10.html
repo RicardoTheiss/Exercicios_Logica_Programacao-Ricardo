@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idPreco"></label>
+        <input type="number" id="idPreco">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idDesconto"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            let preco = Number(document.getElementById("idPreco").value)
+            let desconto = preco * 0.95
+    
+            document.getElementById("idDesconto").value = "O preço do produto com 5% de desconto é igual a R$:" + desconto     
+        }
+
+    </script>
+</body>
+</html>

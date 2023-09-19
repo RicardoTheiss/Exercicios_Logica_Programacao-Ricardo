@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idAltura">Digite a altura da parede</label>
+        <input type="number" id="idAltura">
+    </div>
+
+    <div>
+        <label for="idLargura">Digite a largura da parede</label>
+        <input type="number" id="idLargura">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <div>
+        <output id="idSaida2"></output>
+    </div>
+
+
+    <script>
+
+        function enter() {
+            let alt = Number(document.getElementById("idAltura"). value)
+            let larg = Number(document.getElementById("idLargura"). value)
+            let area = alt * larg
+            let tinta = area / 2
+
+            document.getElementById("idSaida").value = "A área a ser pintada é: " + area +"m2"
+            document.getElementById("idSaida2").value = "A quantadade de latas de tinta necessária é igual a: " + tinta + " latas"
+
+
+            
+        }
+    </script>
+</body>
+</html>

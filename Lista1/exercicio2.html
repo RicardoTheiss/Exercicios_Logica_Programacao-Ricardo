@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNome">Nome do funcionário</label>
+        <input type="text" id="idNome" placeholder="Digite seu nome"></input>
+    </div>
+
+    <div>
+        <label for="idSalario">Salário</label>
+        <input type="text" id="idSalario" placeholder="Digite o salário do funcionário"></input>
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <label for="idSaida">Saida</label>   
+        <input type="text" id="idSaida">
+    </div>
+
+    <script>
+        var nome
+        var salario
+
+        function enter() {
+           nome = document.getElementById("idNome").value
+           salario = document.getElementById("idSalario").value
+           document.getElementById("idSaida").value = "O funcionário " + nome + " tem um salário de R$:" + salario + " em junho"
+            
+        }
+    </script>
+</body>
+</html>
