@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNum" placeholder="Digite um número">
+    </div>
+
+    
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+        function enter() {
+            let num = Number(document.getElementById("idNum").value)
+
+            if (num >= 30 && num <=90) {  
+                document.getElementById("idSaida").value = "O número " + num + " está no intervalo entre 30 e 90"
+                
+            } else { document.getElementById("idSaida").value = "O número " + num + " não está no intervalo entre 30 e 90"
+                
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
