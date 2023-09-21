@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Área Geométrica</h1>
+    <p>Escolha a forma geométrica que deseja calcular:</p>
+    <select id="formaGeometrica">
+        <option value="circulo">Círculo</option>
+        <option value="retangulo">Retângulo</option>
+        <option value="trianguloRetangulo">Triângulo Retângulo</option>
+        <option value="trianguloEquilatero">Triângulo Equilátero</option>
+    </select>
+
+    <div id="entradaValores">
+        <label for="raio">Raio:</label>
+        <input type="number" id="raio"><br>
+
+        <label for="base">Base:</label>
+        <input type="number" id="base"><br>
+
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura"><br>
+
+        <label for="lado">Lado:</label>
+        <input type="number" id="lado"><br>
+    </div>
+
+    <button onclick="calcularArea()">Calcular Área</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularArea() {
+            const formaSelecionada = document.getElementById("formaGeometrica").value;
+            const resultadoDiv = document.getElementById("resultado");
+
+            if (formaSelecionada === "circulo") {
+                const raio = Number(document.getElementById("raio").value);
+                const area = Math.PI * raio * raio;
+                resultadoDiv.innerHTML = `A área do círculo é ${area.toFixed(2)}`;
+            } else if (formaSelecionada === "retangulo") {
+                const base = Number(document.getElementById("base").value);
+                const altura = Number(document.getElementById("altura").value);
+                const area = base * altura;
+                resultadoDiv.innerHTML = `A área do retângulo é ${area.toFixed(2)}`;
+            } else if (formaSelecionada === "trianguloRetangulo") {
+                const base = Number(document.getElementById("base").value);
+                const altura = Number(document.getElementById("altura").value);
+                const area = (base * altura) / 2;
+                resultadoDiv.innerHTML = `A área do triângulo retângulo é ${area.toFixed(2)}`;
+            } else if (formaSelecionada === "trianguloEquilatero") {
+                const lado = Number(document.getElementById("lado").value);
+                const area = (Math.sqrt(3) / 4) * lado * lado;
+                resultadoDiv.innerHTML = `A área do triângulo equilátero é ${area.toFixed(2)}`;
+            } else {
+                resultadoDiv.innerHTML = "Selecione uma forma geométrica válida.";
+            }
+        }
+
+        // Oculta e exibe os campos de entrada de acordo com a forma selecionada
+       
+        document.getElementById("formaGeometrica").addEventListener("change", function () {
+            const formaSelecionada = this.value;
+            const entradaValoresDiv = document.getElementById("entradaValores");
+
+            if (formaSelecionada === "circulo") {
+                entradaValoresDiv.innerHTML = '<label for="raio">Raio:</label><input type="number" id="raio"><br>';
+            } else if (formaSelecionada === "retangulo") {
+                entradaValoresDiv.innerHTML = '<label for="base">Base:</label><input type="number" id="base"><br><label for="altura">Altura:</label><input type="number" id="altura"><br>';
+            } else if (formaSelecionada === "trianguloRetangulo") {
+                entradaValoresDiv.innerHTML = '<label for="base">Base:</label><input type="number" id="base"><br><label for="altura">Altura:</label><input type="number" id="altura"><br>';
+            } else if (formaSelecionada === "trianguloEquilatero") {
+                entradaValoresDiv.innerHTML = '<label for="lado">Lado:</label><input type="number" id="lado"><br>';
+            } else {
+                entradaValoresDiv.innerHTML = '';
+            }
+        })
+      
+    </script>
+</body>
+</html>

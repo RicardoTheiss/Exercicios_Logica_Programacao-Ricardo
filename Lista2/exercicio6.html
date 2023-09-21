@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+    display: block;
+    margin: 5px;
+    margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNum1" placeholder="Digite o primeiro número">
+    </div>
+
+    <div>
+        <input type="number" id="idNum2" placeholder="Digite o segundo número">
+    </div>
+
+    <div>
+        <input type="text" id="idOperacao" placeholder="Digite a operação desejada (+, -, *, ou /)">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+        function enter() {
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+            let operacao = String(document.getElementById("idOperacao").value)
+
+            if (operacao == "+") {
+                document.getElementById("idSaida").value = num1 + num2
+            } else if (operacao == "-") {
+                document.getElementById("idSaida").value = num1 - num2
+            } else if (operacao == "*") {
+                document.getElementById("idSaida").value = num1 * num2
+            } else {
+                document.getElementById("idSaida").value = num1 / num2
+            }
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

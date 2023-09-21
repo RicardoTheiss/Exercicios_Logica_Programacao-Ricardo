@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+    display: block;
+    margin: 5px;
+    margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <input type="text" id="idNome" placeholder="Digite o usuário">
+    </div>
+
+    <div>
+        <input type="password" id="idSenha" placeholder="Digite a senha">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let usuario = document.getElementById("idNome").value
+            let usuario1 = "Ricardo Theiss"
+            let usuario2 = "Professor Ivan"
+            let usuario3 = "Manuela"
+            
+            let senha = document.getElementById("idSenha").value 
+            let senha1 = "rick21"
+            let senha2 = "react2023"
+            let senha3 = "minha-irma"
+
+            if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
+                document.getElementById("idSaida").value = "Acesso permitido"
+            } else if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 != senha && senha2 != senha && senha3 != senha) {
+                document.getElementById("idSaida").value = "Usuário correto mas senha inválida"
+            } else if (usuario1 != usuario && usuario2 != usuario && usuario3 != usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
+                document.getElementById("idSaida").value = "Senha válida mas usuário incorreto"
+            } else {
+                document.getElementById("idSaida").value = "Acesso negado"
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
