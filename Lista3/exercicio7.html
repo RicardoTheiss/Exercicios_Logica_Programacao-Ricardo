@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: block;
+            margin: 5px;
+            margin-bottom: 10px;
+        }    
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <input type="text" id="idNome" placeholder="Digite seu nome">
+    </div>
+
+    <div>
+        <input type="radio" id="idMulher" name="nmSexo">
+        <label for="idMulher">Feminino</label>
+        <br>
+        <input type="radio" id="idHomem" name="nmSexo">
+        <label for="idHomem">Homem</label>
+    </div>
+
+    <div>
+        <input type="number" id="idPreco" placeholder="Digite o preço da sua compra">
+    </div>
+    
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let fem = document.getElementById("idMulher").checked 
+            let masc = document.getElementById("idHomem").checked 
+            let preco = document.getElementById("idPreco").value
+
+            if (fem == true) {
+                document.getElementById("idSaida").value = "O preço final da sua compra, com 13% de desconto é R$:" + (preco * 0,87)
+            } else {
+                document.getElementById("idSaida").value = "O preço final da sua compra, com 5% de desconto é R$:" + (preco * 0,95)
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

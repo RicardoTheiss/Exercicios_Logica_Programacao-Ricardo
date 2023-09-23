@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: block;
+            margin: 5px;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNota1" placeholder="Digite a primeira nota">
+    </div>
+
+    <div>
+        <input type="number" id="idNota2" placeholder="Digite a primeira nota">
+    </div>
+    
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let nota1 = Number(document.getElementById("idNota1").value)
+            let nota2 = Number(document.getElementById("idNota2").value)
+            let media = (nota1 + nota2) / 2
+
+            if (media >= 7) {
+                document.getElementById("idSaida").value = "O aluno obteve a média " + media + ", portanto, obteve um bom aproveitamento"
+            } else {
+                document.getElementById("idSaida").value = "O aluno obteve a média " + media + ", portanto, não obteve um bom aproveitamento"
+            }
+
+        }
+    </script>
+</body>
+</html>

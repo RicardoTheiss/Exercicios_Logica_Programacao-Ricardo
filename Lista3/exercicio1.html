@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idVelocidade" placeholder="Digite a velocidade do carro em km/h">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let vel = document.getElementById("idVelocidade").value
+            let multa = vel - 80
+
+            if (vel <= 80) {
+                document.getElementById("idSaida").value = "Velocidade permitida"
+            } else { 
+                document.getElementById("idSaida").value = "Pelo fato de a velocidade ser superior a 80Km/h, o motorista deverá pagar uma multa de R$:" + multa * 5
+            }
+        }
+    </script>
+
+</body>
+</html>

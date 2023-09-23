@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: block;
+            margin: 5px;
+            margin-bottom: 10px;
+        }    
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idPeso" placeholder="Digite seu peso">
+    </div>
+
+    <div>
+        <input type="number" id="idAltura" placeholder="Digite sua altura em metros">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let alt = Number(document.getElementById("idAltura").value)
+            let peso = Number(document.getElementById("idPeso").value)
+
+            let imc = peso / (alt ** 2)
+
+            if (imc < 18.5) {
+                document.getElementById("idSaida").value = ("Você está abaixo do peso ideal")
+            } else if (imc < 25) {
+                document.getElementById("idSaida").value = ("Você está no peso ideal")
+            } else if (imc < 30) {
+                document.getElementById("idSaida").value = ("Você está acima do peso ideal")
+            } else if (imc < 40) {
+                document.getElementById("idSaida").value = ("Você está com obesidade")
+            } else {
+                document.getElementById("idSaida").value = ("Você está com obesidade mórbida")
+            }
+
+        }
+    </script>
+
+</body>
+</html>

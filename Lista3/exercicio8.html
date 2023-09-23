@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: block;
+            margin: 5px;
+            margin-bottom: 10px;
+        }    
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idDist" placeholder="Digite a distância">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let dist = document.getElementById("idDist").value 
+
+            if (dist <= 200) {
+                document.getElementById("idSaida").value = "O valor da viagem é de R$" + (dist * 0.5)
+            } else {
+                document.getElementById("idSaida").value = "O valor da viagem é de R$" + (dist * 0.45)
+            }
+        }
+    </script>
+</body>
+</html>

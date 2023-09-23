@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            display: block;
+            margin: 5px;
+            margin-bottom: 10px;
+        }    
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <input type="number" id="idNasc" placeholder="Digite o ano de nascimento">
+    </div>
+
+    <div>
+        <input type="button" value="enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <script>
+
+        function enter() {
+            let nascimento = document.getElementById("idNasc").value 
+            let anoAtual = new Date().getFullYear()
+            let idade = anoAtual - nascimento
+
+            if (idade < 18) {
+                document.getElementById("idSaida").value = "Faltam " + (18 - idade) + " ano(s) para você se alistar!"
+            } else if (idade == 18) {
+                document.getElementById("idSaida").value = "Você vai se alistar esse ano! "
+            } else {
+                document.getElementById("idSaida").value = "Você se alistou a " + (idade - 18) + " ano(s)!"
+            }
+        }
+    </script>
+    
+</body>
+</html>

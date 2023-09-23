@@ -10,7 +10,5 @@
  - $ = ??
     - Ambos nas estruturas condicionai
 
-### entradaValoresDiv
-- Por que tem uma div?
-    - O ID é somente entradaValores
-
+### fazer um input aceitar apenas números interos
+- step="1" pattern="\d+"
