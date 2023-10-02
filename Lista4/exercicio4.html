@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <output id="idComeco"></output>
+        <output id="idSaida"></output>
+        <output id="idFim"></output>
+    </div>
+
+    <script>
+          var saida = document.getElementById("idSaida")
+
+        document.getElementById("idComeco").value = "Começou"
+        console.log("Começou")
+     for (let i = 100; i >= 0; i -= 5) {
+         console.log(i)
+         saida.value += i + " "
+     }
+        console.log("Acabou!")
+        document.getElementById("idFim").value = "Acabou!"
+    </script>
+</body>
+</html>

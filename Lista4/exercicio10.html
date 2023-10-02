@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="idNum1" placeholder="Digite o primeiro número">
+    </div>
+
+    <div>
+        <input type="number" id="idNum2" placeholder="Digite o último número">
+    </div>
+
+    <div>
+        <label for="idEscolha">Escolha:</label>
+        <select id="idEscolha">
+            <option value="Par">Pares</option>
+            <option value="Ímpar">Ímpares</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            let num1 = Number(document.getElementById("idNum1").value) 
+            let num2 = Number(document.getElementById("idNum2").value) 
+            let escolha = document.getElementById("idEscolha").value 
+            let cont = ""
+
+            if (escolha == "Par") {
+                for (let i = num1; i < num2; i++) {
+                    if (i % 2 == 0) {
+                        cont += i + " "
+                    }        
+                }
+            } else {
+                for (let i = num1; i < num2; i++) {
+                    if (i % 2 != 0) {
+                        cont += i + " "
+                    }   
+                    
+                }
+            }
+            document.getElementById("idSaida").value = cont
+        }
+    </script>
+</body>
+</html>

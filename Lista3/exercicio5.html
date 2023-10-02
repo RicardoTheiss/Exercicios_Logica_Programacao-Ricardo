@@ -33,10 +33,10 @@
         function enter() {
             let ano = document.getElementById("idAno").value 
        
-            if (ano % 4 != 0) {
-                document.getElementById("idSaida").value = "O ano não é bissexto"
-            } else {
+            if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {
                 document.getElementById("idSaida").value = "O ano é bissexto"
+            } else {
+                document.getElementById("idSaida").value = "O ano não é bissexto"
             }
         }
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <div>
+        <output id="idSaida2"></output>
+    </div>
+
+
+    <script>
+
+        function enter() {
+            let cont3 = "Números múltiplos de 3: "
+            let cont5 = "Números múltiplos de 5: "
+            for (let i = 1; i < 100; i++) {
+                if (i % 3 == 0) {
+                    cont3 += i + " "
+                } 
+            }
+            for (let i = 1; i < 100; i++) {
+                if (i % 5 == 0) {
+                    cont5 += i + " "
+                } 
+            }
+            document.getElementById("idSaida").value = cont3
+            document.getElementById("idSaida2").value = cont5
+        }
+    </script>
+</body>
+</html>

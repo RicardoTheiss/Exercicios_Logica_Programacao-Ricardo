@@ -31,27 +31,42 @@
         <output id="idSaida"></output>
     </div>
 
+    <div>
+        <output id="idAcessoNeg"></output>
+    </div>
+
     <script>
 
-        function enter() {
-            let usuario = document.getElementById("idNome").value
-            let usuario1 = "Ricardo Theiss"
-            let usuario2 = "Professor Ivan"
-            let usuario3 = "Manuela"
+    var usuario = document.getElementById("idNome").value
+            var usuario1 = "Ricardo Theiss"
+            var usuario2 = "Professor Ivan"
+            var usuario3 = "Manuela"
             
-            let senha = document.getElementById("idSenha").value 
-            let senha1 = "rick21"
-            let senha2 = "react2023"
-            let senha3 = "minha-irma"
+            var senha = document.getElementById("idSenha").value 
+            var senha1 = "rick21"
+            var senha2 = "react2023"
+            var senha3 = "minha-irma"
 
-            if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
-                document.getElementById("idSaida").value = "Acesso permitido"
-            } else if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 != senha && senha2 != senha && senha3 != senha) {
-                document.getElementById("idSaida").value = "Usuário correto mas senha inválida"
-            } else if (usuario1 != usuario && usuario2 != usuario && usuario3 != usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
-                document.getElementById("idSaida").value = "Senha válida mas usuário incorreto"
+            var i = 0
+
+        function enter() {
+
+            
+            if (i <= 3) {
+                if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
+                    document.getElementById("idSaida").value = "Acesso permitido"
+                } else if (usuario1 == usuario || usuario2 == usuario || usuario3 == usuario && senha1 != senha && senha2 != senha && senha3 != senha) {
+                    document.getElementById("idSaida").value = "Usuário correto mas senha inválida"
+                    i = i + 1
+                } else if (usuario1 != usuario && usuario2 != usuario && usuario3 != usuario && senha1 == senha || senha2 == senha || senha3 == senha) {
+                    document.getElementById("idSaida").value = "Senha válida mas usuário incorreto"
+                    i = i + 1
+                } else {
+                    document.getElementById("idSaida").value = "Acesso negado"
+                    i = i + 1
+                }   
             } else {
-                document.getElementById("idSaida").value = "Acesso negado"
+                document.getElementById("idAcessoNeg").value = "Acesso bloqueado"
             }
         }
 
