@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNumero" placeholder="Digite um Numero">
+    </div>
+
+    <div>
+        <input type="button" value="Adicionar Numero" onclick="adc()">
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    <div>
+        <output id="id10"></output>
+    </div>
+
+
+    <script>
+         const vetNumeros = []
+            function adc() {
+                const numero = Number(document.getElementById("idNumero").value)
+
+                vetNumeros.push(numero)
+                document.getElementById("idNumero").value = ""
+            }
+            function enter() {
+                mul10 = "Os números múltiplos de 10 são: "
+                for (let i = 0; i < vetNumeros.length; i++) {
+                    if (vetNumeros[i] % 10 == 0) {
+                        mul10 += vetNumeros[i] + " "
+                    }
+                }
+                document.getElementById("idSaida").value = vetNumeros
+                document.getElementById("id10").value = mul10
+            }
+    </script>
+</body>
+</html>

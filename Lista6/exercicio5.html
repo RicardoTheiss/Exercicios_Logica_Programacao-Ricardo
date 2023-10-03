@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            const vet = []
+            vet.length = 19
+
+            for (let i = 0; i < vet.length; i++) {
+                vet[i] = parseInt(Math.random() * 100)
+            }
+            document.getElementById("idSaida").value = vet
+        }
+    </script>
+</body>
+</html>

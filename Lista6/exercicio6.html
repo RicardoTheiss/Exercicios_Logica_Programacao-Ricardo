@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="text" id="idNome" placeholder="Digite uma Nome">
+    </div>
+
+    <div>
+        <input type="button" value="Adicionar Nome" onclick="adc()">
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+         const vetNomes = []
+            function adc() {
+                const Nome = document.getElementById("idNome").value
+
+                vetNomes.unshift(Nome)
+                document.getElementById("idNome").value = ""
+            }
+            function enter() {
+                document.getElementById("idSaida").value = vetNomes
+            }
+    </script>
+</body>
+</html>

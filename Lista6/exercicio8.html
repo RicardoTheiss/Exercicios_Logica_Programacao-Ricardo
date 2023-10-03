@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNum" placeholder="Digite um Numero">
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idLinha"></output>
+        <output id="idAcc"></output>
+        <output id="idAlert"></output>
+    </div>
+
+
+    <script>
+        const vet = []
+        for (let i = 0; i < 29; i++) {
+            vet[i] = parseInt(Math.random() * 16)
+        }
+        function enter() {
+            let num = Number(document.getElementById("idNum").value)
+            let linha = "O número foi encontrado na(s) linha(s): "
+            let acc = 0
+            for (let i = 0; i < 29; i++) {
+                if (vet[i] == num) {
+                    linha += i + " "
+                    acc += 1
+
+                } 
+            }
+            document.getElementById("idLinha").value = linha
+            document.getElementById("idAcc").value = "O número foi encontrado " + acc + " vezes"  
+         
+            
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            const vet = []
+            elemento = 5
+            next = 3
+            now = ""
+
+            for (let i = 0; i < 10; i++) {
+               if (i == 0) {
+                vet[i] = 5
+               } else if (vet[i-1] == 5) {
+                vet[i] = 3
+               } else 
+               vet[i] = 5
+            }
+            document.getElementById("idSaida").value = vet
+        }
+    </script>
+</body>
+</html>

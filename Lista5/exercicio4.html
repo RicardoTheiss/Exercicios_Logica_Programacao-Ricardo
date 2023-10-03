@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+    
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    
+    <script>
+        
+        function enter() {
+            let num1 = 0
+            let num2 = 1
+            let fibo = " "
+            for (let i = 1; i < 10; i++) {
+                const next = num1 + num2
+                fibo += num1 + " "
+                num1 = num2 
+                num2 = next 
+                
+            }
+            document.getElementById("idSaida").value = fibo
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            const vet = []
+            let elemento = 9
+            for (let i = 9; i > 0; i--) {
+                vet.push(elemento)
+                elemento -= 1
+            }
+            document.getElementById("idSaida").value = vet
+        }
+    </script>
+</body>
+</html>

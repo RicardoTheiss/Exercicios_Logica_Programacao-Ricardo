@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+    
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+    
+    <script>
+        
+        const vetSeq = []
+        function enter() {
+            for (let i = 1; i < 15; i++) {
+                if (i == 1) {
+                    vetSeq[i] = 0
+                } else if (i == 2) {
+                    vetSeq[i] = 1
+                }  else {
+                    vetSeq[i] = vetSeq[i-1] + vetSeq[i-2]
+                }
+            } 
+
+
+            document.getElementById("idSaida").value = vetSeq
+        }
+    </script>
+</body>
+</html>

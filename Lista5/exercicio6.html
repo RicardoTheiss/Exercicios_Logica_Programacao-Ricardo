@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idIdade" placeholder="Digite uma idade">
+    </div>
+
+    <div>
+        <input type="button" value="Adicionar idade" onclick="adc()">
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <ul id="idLista"></ul>
+    </div>
+
+    <div>
+        <output id="idMedia"></output><br>
+        <output id="idMais18"></output><br>
+        <output id="idMenos5"></output><br>
+        <output id="idMaior"></output>
+    </div>
+
+    <script>
+        const vetIdades = []
+            function adc() {
+                const idade = Number(document.getElementById("idIdade").value) 
+
+                vetIdades.push(idade)
+                document.getElementById("idLista").innerHTML += `<li> ${idade}</li>`
+                document.getElementById("idIdade").value = ""
+            }
+            function enter() {
+                
+                    let somaIdades = vetIdades.reduce((acc, idade) => acc + idade, 0);
+                    let media = somaIdades / vetIdades.length;
+    
+                    let mais18 = 0
+                    for (let j = 0; j < vetIdades.length; j++) {
+                        if (vetIdades[j] > 18) {
+                            mais18 += 1
+                        } 
+                    }
+                    let menos5 = 0
+                    for (let k = 0; k < vetIdades.length; k++) {
+                        if (vetIdades[k] < 5) {
+                            menos5 += 1
+                        }    
+                    }
+                    let maior = Math.max(...vetIdades)      
+                
+                
+
+                document.getElementById("idMedia").textContent = "A média das idades é: " + media
+                document.getElementById("idMais18").value = "A quantidade de idades maiores que 18 é igual a: " + mais18
+                document.getElementById("idMenos5").value = "A quantidade de idades menores que 5 é igual a: " + menos5
+                document.getElementById("idMaior").value = "A maior idade é: " + maior
+            }
+    </script>
+</body>
+</html>

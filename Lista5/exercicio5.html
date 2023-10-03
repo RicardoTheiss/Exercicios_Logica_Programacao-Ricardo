@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Preços</title>
+</head>
+<body>
+    <h1>Calculadora de Preços</h1>
+
+    <input type="number" id="preco" placeholder="Digite o preço do produto">
+    <button onclick="adicionarPreco()">Adicionar Preço</button>
+    <button onclick="calcularMaiorMenor()">Calcular Maior e Menor Preço</button>
+
+    <h2>Preços Digitados:</h2>
+    <ul id="listaPrecos"></ul>
+
+    <h2>Maior e Menor Preço:</h2>
+    <p id="maiorPreco"></p>
+    <p id="menorPreco"></p>
+
+    <script>
+        const precos = [];
+        
+        function adicionarPreco() {
+            const preco = parseFloat(document.getElementById("preco").value);
+     
+                precos.push(preco);
+                document.getElementById("listaPrecos").innerHTML += `<li>R$ ${preco.toFixed(2)}</li>`;
+                document.getElementById("preco").value = "";
+        }
+
+        function calcularMaiorMenor() {
+
+                const maior = Math.max(...precos);
+                const menor = Math.min(...precos);
+                document.getElementById("maiorPreco").innerHTML = `Maior Preço: R$ ${maior.toFixed(2)}`;
+                document.getElementById("menorPreco").innerHTML = `Menor Preço: R$ ${menor.toFixed(2)}`;
+
+
+        }
+    </script>
+</body>
+</html>
