@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idTemp" placeholder="Digite uma temperatura em Celsius">
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            let temp = Number(document.getElementById("idTemp").value) 
+            fah = (9 * temp + 160) / 5
+
+            document.getElementById("idSaida").value = "A temperatura em Fahrenheit é de: " + fah
+
+        }
+    </script>
+</body>
+</html>

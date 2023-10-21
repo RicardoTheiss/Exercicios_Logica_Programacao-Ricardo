@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idTemp" placeholder="Digite uma temperatura para ser convertida">
+    </div>
+
+    <div>
+        <d>A temperatura acima é baseada em qual unidade?</d>
+        <br>
+        <input type="radio" name="nmTemp" id="idCelsius">
+        <label for="idCelsius">Celsius</label>
+        <br>
+        <input type="radio" name="nmTemp" id="idFah">
+        <label for="idFah">Fahrenheit</label>
+        <br>
+        <input type="radio" name="nmTemp" id="idKel">
+        <label for="idKel">Kelvin</label>
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        function enter() {
+            let temp = Number(document.getElementsByName("nmTemp").checked)
+            let c = document.getElementById("idCelsius")
+            let f = document.getElementById("idFah")
+            let k = document.getElementById("idKel")
+
+            if (c = true) {
+                k = c + 273
+                f = (9 * c + 160) / 5
+                document.getElementById("idSaida").innerText = "O valor em Kelvin é: " + k + "\n" +
+                                                                "O valor em Fahrenheit é: " + f
+            } else if (f = true) {
+                c = k - 173
+                k = ((f * 5)-160)/9 + 273 
+                document.getElementById("idSaida").innerText = "O valor em Kelvin é: " + k + "\n" +
+                                                                "O valor em Celsius é: " + c
+            } else {
+                c = k-273 
+                f  = (((k - 273) * 9) + 160)/5
+                document.getElementById("idSaida").innerText = "O valor em Celsius é: " + c + "\n" +
+                                                                "O valor em Fahrenheit é: " + f
+            }
+
+
+           
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idDia" placeholder="Escolha um dia do mês">
+    </div>
+
+    <div>
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        const vetTemps = []
+        for (let i = 0; i < 29; i++) {
+            const numeroAleatorio = Math.random()
+            let temp = Math.floor(numeroAleatorio * (40 - 10 + 1)) + 10
+            vetTemps.push(temp)
+        }
+        let soma = vetTemps.reduce((acc, temp) => acc + temp, 0)
+        let media = soma / vetTemps.length
+
+        function enter() {
+            dia = Number(document.getElementById("idDia").value)
+            for (let i = 0; i < vetTemps.length; i++) {
+                if (dia = i+1) {
+                    if (vetTemps[i] > media) {
+                        document.getElementById("idSaida").innerText = "A temperatura do dia escolhido é de " + vetTemps[i] + "\n" +
+                                                                        "A temperatura está acima da média, cujo é: " + media.toFixed(2)
+                    } else if (vetTemps[i] < media) {
+                        document.getElementById("idSaida").innerText = "A temperatura do dia escolhido é de " + vetTemps[i] + "\n" +
+                                                                        "A temperatura está abaixo da média, cujo é: " + media.toFixed(2)
+                    } else {
+                        document.getElementById("idSaida").innerText = "A temperatura do dia escolhido é de " + vetTemps[i] + "\n" +
+                                                                        "A temperatura está exatamente na média, cujo é: " + media.toFixed(2)
+                    }
+                }                   
+                
+            }
+        }
+    </script>
+
+</body>
+</html>

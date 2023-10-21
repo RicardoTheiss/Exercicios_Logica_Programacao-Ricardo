@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNome">Digite um nome</label>
+        <input type="text" id="idNome">
+
+        <label for="idNome">Digite uma idade</label>
+        <input type="number" id="idIdade">
+    </div>
+
+    <div>
+        <input type="button" value="Adicionar" onclick="adc()">
+    </div>
+
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        const nomes = []
+        const idades = []
+        var cont = 0
+        function adc() {
+          for (let i = 0; i < 9; i++) {
+              var nome = document.getElementById("idNome").value
+              nomes.push(nome)
+              var idade = document.getElementById("idIdade").value
+              idades.push(idade)
+    
+              document.getElementById("idNome").value = ""
+              document.getElementById("idIdade").value = ""
+          }
+          var mais18 = "As pessoas maiores de idade são: \n"
+          for (let j = 0; j < 9; j++) {
+              if (idades[j] >= 18) {
+                  mais18 += nomes[j] + " que possui " + idades[j] + " anos \n"
+              }    
+          }
+
+          
+          document.getElementById("idSaida").innerText = mais18 
+        }
+
+
+        
+    </script>
+</body>
+</html>

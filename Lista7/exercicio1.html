@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="idNota" placeholder="Digite uma nota">
+    </div>
+
+    <div>
+        <input type="button" value="Adicionar outra nota" onclick="adc()">
+        <input type="button" value="Enter" onclick="enter()">
+    </div>
+    
+    <div>
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        const vet = []
+
+        function adc() {
+            var nota = Number(document.getElementById("idNota").value)
+            vet.push(nota)
+
+            document.getElementById("idNota").value = ""
+        }
+        
+        function enter() {
+            let somaNotas = vet.reduce(function(acc, nota) {acc + nota}, 0);
+            let media = somaNotas / vet.length
+            
+            let maior = Math.max(...vet)
+            let maiorPos = "O maior número aparece na posição: "
+
+            cont = 0
+            for (let i = 0; i < vet.length; i++) {
+                if (vet[i] > 7) {
+                    cont += 1
+                }
+                if (vet[i] == maior) {
+                    maiorPos += i
+                }
+            }
+            document.getElementById("idSaida").innerText = "A média da turma é: " + media + "\n" +
+                                                        "A quantidade de alunos que estão acima da média é: " + cont + " alunos \n" +
+                                                        "A maior nota digitada foi: " + maior + "\n" +
+                                                        maiorPos 
+                        
+        }
+    </script>
+</body>
+</html>

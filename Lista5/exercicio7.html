@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div>
         <input type="number" id="idTentativa" placeholder="Digite sua tentativa">
     </div>
@@ -19,34 +21,45 @@
         <ul id="idLista"></ul>
     </div>
 
+    <output id="idSaida">
 
-    <script>
-        const num = parseInt(Math.random() * 11)
 
-        function enter() {
-            let cont = 0
-            let tentativa = Number(document.getElementById("idTentativa").value) 
-            for (let i = 1; i < 3; i++) {
-                if (tentativa != num) {
-                    cont += 1
-                    if (tentativa > num) {
-                        document.getElementById("idLista").innerHTML +=  document.getElementById("idLista").innerHTML += `<li> O número é menor que ${tentativa}</li>`
-                        document.getElementById("idTentativa").value = ""
-                        
-                    } else {
-                        document.getElementById("idLista").innerHTML +=  document.getElementById("idLista").innerHTML += `<li>O número é maior que ${tentativa}</li>`
-                        document.getElementById("idTentativa").value = ""
-                    }
+        <script>
+
+            function enter() {
+                const num = parseInt(Math.random() * 11)
+                let cont = 0
+                let tentativa = Number(document.getElementById("idTentativa").value)
+                cont++
+                
+                
+                if (cont <= 3) {
                     
+                    if (tentativa == num) {
+                        msn = "Parabéns vc descobriu o número sorteado"
+                    } else {
+                        if (cont == 3) {
+                            msn = "Perdeu o Jogo após 3 tentativas!!"
+                        } else {
+                            if (tentativa < num) {
+                                msn = "O número apostado é menor do que o sorteado"
+                                document.getElementById("idTentativa").value = ""
 
+                            } else if (tentativa > num) {
+                                msn = "O número apostado é maior do que o sorteado"
+                                document.getElementById("idTentativa").value = ""
+                            }
+                        }
+                    }
                 } else {
-                    alert("Você acertou!")
-                } 
-                if (cont == 3) {
-                    alert("Você perdeu :(")
+                    msn = "Perdeu o Jogo!!"
                 }
+                document.getElementById("idSaida").value = msn
             }
-        }
-    </script>
+
+
+
+        </script>
 </body>
+
 </html>

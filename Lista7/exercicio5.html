@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNUm">Insira 10 números</label>
+        <br>
+        <input type="number" id="idNum">
+        <input type="button" value="Adicionar Número" onclick="adc()">
+    </div>
+
+    <div>
+        <p>Números inseridos:</p>
+        <ul id="idList"></ul>
+    </div>
+
+    <div>
+        <label for="idOrder">Escolha a ordenacção</label>
+        <select name="nmOrder" id="idOrder">
+            <option value="Crescente">Ordem Crescente</option>
+            <option value="Decrescente">Ordem Decrescente</option>
+        </select>   
+        <input type="button" value="Ordenar" onclick="ordenar()">
+    </div>
+
+    <div>
+        <p>Números ordenados:</p>
+        <ul id="idOrdedList"></ul>
+    </div>
+
+
+    <script>
+        var vet = []
+
+        function adc() {
+            const numInput = document.getElementById("idNum")
+            const numList = document.getElementById("idList")
+            const num = parseFloat(numInput.value)
+            
+
+            if (!isNaN(num)) {
+                vet.push(num)
+                numList.innerHTML += `<li>${num}</li>`
+                numInput.value = ""
+            }
+        }
+
+        function ordenar() {
+            const select = document.getElementById("idOrder")
+            const sortedList = document.getElementById("idOrdedList")
+
+            const sortedNumbers = select === "crescente" ? crescente(vet) : decrescente(vet)
+           
+            sortedList.innerHTML = ""
+            sortedNumbers.forEach(num => {
+                sortedList.innerHTML += `<li>${num}</li>`
+            });
+
+        }
+
+        function crescente(arr) {
+            const length = arr.length;
+
+            for (let i = 0; i < length - 1; i++) {
+                
+                for (let j = 0; j < length - i - 1; j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        const temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return arr;
+        }
+
+        function decrescente(arr) {
+            const length = arr.length;
+
+            for (let i = 0; i < length - 1; i++) {
+                for (let j = 0; j < length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        const temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return arr;
+        }
+    </script>
+</body>
+</html>

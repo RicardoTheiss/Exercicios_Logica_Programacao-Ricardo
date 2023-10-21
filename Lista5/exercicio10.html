@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    
+    <label for="fromCurrency">De:</label>
+    <select id="fromCurrency">
+        <option value="BRL">Real (BRL)</option>
+        <option value="USD">Dólar Americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Libra Esterlina (GBP)</option>
+        <option value="CAD">Dólar Canadense (CAD)</option>
+    </select>
+    
+    <label for="toCurrency">Para:</label>
+    <select id="toCurrency">
+        <option value="BRL">Real (BRL)</option>
+        <option value="USD">Dólar Americano (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">Libra Esterlina (GBP)</option>
+        <option value="CAD">Dólar Canadense (CAD)</option>
+    </select>
+    
+    <label for="amount">Quantidade:</label>
+    <input type="number" id="amount" placeholder="Informe o valor">
+    
+    <button onclick="converterMoeda()">Converter</button>
+    
+    <p>Resultado: <span id="resultado"></span></p>
+    
+    <script>
+        function converterMoeda() {
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+            const amount = parseFloat(document.getElementById("amount").value);
+            
+            // Defina as taxas de conversão
+            const taxas = {
+                'BRL': 1,      // Real
+                'USD': 5.35,   // Dólar Americano
+                'EUR': 6.20,   // Euro
+                'GBP': 7.25,   // Libra Esterlina
+                'CAD': 4.15    // Dólar Canadense
+            };
+            
+            // Realize a conversão
+            const resultado = (amount / taxas[toCurrency]) * taxas[fromCurrency];
+            
+            // Exiba o resultado
+            document.getElementById("resultado").textContent = resultado.toFixed(2) + " " + toCurrency;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        #idPageInicio,
+        #idPageNotas,
+        #idPageConsulta {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #idSaida {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input type="radio" id="idTela1" name="nmPages" value="Cadastrar alunos" onclick="habilitarTela1()">
+        <label for="idTela1">Cadastrar Alunos</label>
+    </div>
+    <div>
+        <input type="radio" id="idTela2" name="nmPages" value="Cadastrar Notas" onclick="habilitarTela2()">
+        <label for="idTela2">Cadastrar Notas</label>
+    </div>
+    <div>
+        <input type="radio" id="idTela3" name="nmPages" value="Cadastros" onclick="habilitarTela3()">
+        <label for="idTela3">Consultas</label>
+    </div>
+
+    <div id="idPageInicio">
+        <label for="idNome">Nome do aluno</label>
+        <input type="text" id="idNome">
+        <br>
+        <br>
+        <label for="idEnd">Endereço do aluno</label>
+        <input type="text" id="idEnd">
+        <br>
+        <br>
+        <label for="idMae">Nome da mãe do aluno</label>
+        <input type="text" id="idMae">
+        <br>
+        <br>
+        <label for="idPai">Nome do pai do aluno</label>
+        <input type="text" id="idPai">
+        <br>
+        <br>
+        <label for="idTel">Telefone dos pais</label>
+        <input type="tel" id="idTel">
+        <br>
+        <br>
+        <input type="button" value="Lançar dados do aluno" onclick="adc()">
+    </div>
+
+    <div id="idPageNotas">
+        <label for="idNota1">Digite a primeira nota</label>
+        <input type="number" id="idNota1">
+        <br>
+        <br>
+        <label for="idNota2">Digite a segunda nota</label>
+        <input type="number" id="idNota2">
+        <br>
+        <br>
+        <label for="idNota3">Digite a terceira nota</label>
+        <input type="number" id="idNota3">
+        <br>
+        <br>
+        <label for="idNota4">Digite a quarta nota</label>
+        <input type="number" id="idNota4">
+        <br>
+        <br>
+        <input type="button" value="Lançar notas dos alunos" onclick="lancarNotas()">
+    </div>
+
+    <div id="idPageConsulta">
+        <label for="idAlunoConsulta">Nome do aluno para consulta</label>
+        <input type="text" id="idAlunoConsulta">
+        <input type="button" value="Consultar" onclick="verCadastro()">
+
+        <output id="idSaida"></output>
+    </div>
+
+
+    <script>
+        var tela1 = document.getElementById("idTela1").checked
+        var tela2 = document.getElementById("idTela2").checked
+        var tela3 = document.getElementById("idTela3").checked
+
+        document.getElementById("idPageInicio").style.display = "none"
+        document.getElementById("idPageNotas").style.display = "none"
+        document.getElementById("idPageConsulta").style.display = "none"
+
+        function habilitarTela1() {
+            document.getElementById("idPageInicio").style.display = "block"
+            document.getElementById("idPageNotas").style.display = "none"
+            document.getElementById("idPageConsulta").style.display = "none"
+        }
+        function habilitarTela2() {
+            document.getElementById("idPageInicio").style.display = "none"
+            document.getElementById("idPageNotas").style.display = "block"
+            document.getElementById("idPageConsulta").style.display = "none"
+        }
+        function habilitarTela3() {
+            document.getElementById("idPageInicio").style.display = "none"
+            document.getElementById("idPageNotas").style.display = "none"
+            document.getElementById("idPageConsulta").style.display = "block"
+        }
+
+        const vetNomes = []
+        const vetEndereco = []
+        const vetMae = []
+        const vetPai = []
+        const vetTel = []
+        const vetNota1 = []
+        const vetNota2 = []
+        const vetNota3 = []
+        const vetNota4 = []
+
+        function adc() {
+            let nomeInput = document.getElementById("idNome").value
+            const nome = nomeInput
+            vetNomes.push(nome)
+
+            let endInput = document.getElementById("idEnd").value
+            const end = endInput
+            vetEndereco.push(end)
+
+            let maeInput = document.getElementById("idMae").value
+            const mae = maeInput
+            vetMae.push(mae)
+
+            let paiInput = document.getElementById("idPai").value
+            const pai = paiInput
+            vetPai.push(pai)
+
+            let telInput = document.getElementById("idTel").value
+            const tel = telInput
+            vetTel.push(tel)
+
+            document.getElementById("idNome").value = ""
+            document.getElementById("idEnd").value = ""
+            document.getElementById("idMae").value = ""
+            document.getElementById("idPai").value = ""
+            document.getElementById("idTel").value = ""
+        }
+
+        function lancarNotas() {
+            let nota1Input = Number(document.getElementById("idNota1").value)
+            const nota1 = nota1Input
+            vetNota1.push(nota1)
+
+            let nota2Input = Number(document.getElementById("idNota2").value)
+            const nota2 = nota2Input
+            vetNota2.push(nota2)
+
+            let nota3Input = Number(document.getElementById("idNota3").value)
+            const nota3 = nota3Input
+            vetNota3.push(nota3)
+
+            let nota4Input = Number(document.getElementById("idNota4").value)
+            const nota4 = nota4Input
+            vetNota4.push(nota4)
+
+            document.getElementById("idNota1").value = ""
+            document.getElementById("idNota2").value = ""
+            document.getElementById("idNota3").value = ""
+            document.getElementById("idNota4").value = ""
+        }
+
+        function verCadastro() {
+            let nome = document.getElementById("idAlunoConsulta").value;
+
+            for (let i = 0; i < vetNomes.length; i++) {
+                if (vetNomes[i] == nome) {
+                    document.getElementById("idSaida").innerText = "Nome: " + vetNomes[i] + "\n" +
+                        "Endereço: " + vetEndereco[i] + "\n" +
+                        "Nome da mãe: " + vetMae[i] + "\n" +
+                        "Nome do pai: " + vetPai[i] + "\n" +
+                        "Telefone: " + vetTel[i] + "\n" +
+                        "Nota 1: " + vetNota1[i] + "\n" +
+                        "Nota 2: " + vetNota2[i] + "\n" +
+                        "Nota 3: " + vetNota3[i] + "\n" +
+                        "Nota 4: " + vetNota4[i] + "\n"
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
