@@ -35,10 +35,8 @@
         const salarios = []
         const sexos = []
 
-        let contador = 0; // Variável para rastrear o número de funcionários cadastrados
-
         function adc() {
-            if (contador < 5) {
+  
                 let nome = document.getElementById("idNome").value 
                 nomes.push(nome)
     
@@ -50,9 +48,7 @@
     
                 document.getElementById("idNome").value = ""
                 document.getElementById("idSalario").value = ""
-                
-                contador++;
-            }
+        
         }
 
         function enter() {

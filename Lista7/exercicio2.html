@@ -17,6 +17,7 @@
 
     <div>
         <input type="button" value="Adicionar" onclick="adc()">
+        <input type="button" value="Ver estatisticas" onclick="enter()">
     </div>
 
     <div>
@@ -29,7 +30,7 @@
         const idades = []
         var cont = 0
         function adc() {
-          for (let i = 0; i < 9; i++) {
+
               var nome = document.getElementById("idNome").value
               nomes.push(nome)
               var idade = document.getElementById("idIdade").value
@@ -37,18 +38,19 @@
     
               document.getElementById("idNome").value = ""
               document.getElementById("idIdade").value = ""
-          }
-          var mais18 = "As pessoas maiores de idade são: \n"
-          for (let j = 0; j < 9; j++) {
-              if (idades[j] >= 18) {
-                  mais18 += nomes[j] + " que possui " + idades[j] + " anos \n"
-              }    
-          }
 
-          
-          document.getElementById("idSaida").innerText = mais18 
-        }
-
+            }
+            function enter() {
+                var mais18 = "As pessoas maiores de idade são: \n"
+                for (let j = 0; j < 9; j++) {
+                    if (idades[j] >= 18) {
+                        mais18 += nomes[j] + " que possui " + idades[j] + " anos \n"
+                    }    
+                }
+      
+                
+                document.getElementById("idSaida").innerText = mais18    
+            }
 
         
     </script>

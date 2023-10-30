@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="idNome">Digite um nome</label>
+        <input type="text" id="idNome">
+        
+        <label for="idIdade">Digite uma idade</label>
+        <input type="number" id="idIdade">
+    </div>
+    
+    <div>
+        <input type="button" value="Adicionar" onclick="adc()">
+        <input type="button" value="Ver estatisticas" onclick="enter()">
+    </div>
+    
+    <div>
+        <output id="idSaida"></output>
+    </div>
+    
+    <script>
+        const pessoas = []
+
+        function adc() {
+            const nome = document.getElementById("idNome").value
+            const idade = parseInt(document.getElementById("idIdade").value)
+
+            if (nome && !isNaN(idade)) {
+                pessoas.push({ nome, idade })
+                document.getElementById("idNome").value = ""
+                document.getElementById("idIdade").value = ""
+            }
+        }
+
+        function enter() {
+            const maioresDeIdade = pessoas.filter(pessoa => pessoa.idade >= 18)
+            const mensagem = maioresDeIdade.map(pessoa => `${pessoa.nome} que possui ${pessoa.idade} anos`)
+            const resultado = "As pessoas maiores de idade são:\n" + mensagem.join("\n")
+
+            document.getElementById("idSaida").innerText = resultado
+        }
+    </script>
+</body>
+</html>
